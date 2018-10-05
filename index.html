@@ -48,7 +48,7 @@
        
         <div class="container px-0">
             <div class ="card mb-3">
-                <h5 class="card-header rounded-0 bi-primary text-white md-5">>Current Train Schedule</h5>
+                <h5 class="card-header rounded-0 bi-primary text-white md-5">Current Train Schedule</h5>
                 <div cass="card-body">
                 <table class="table table hover" id="train-table">
                     <thead>
@@ -56,14 +56,14 @@
                            <th scope="col">Delete</th>
                            <th scope="col">Train Name</th>
                            <th scope="col">Destination</th>
-                           <th scope="col">Frequency (min</th>
+                           <th scope="col">Frequency (min)</th>
                            <th scope="col">Next Arrival</th>
                            <th scope="col">Minutes Away</th>
                            
                         </tr>    
 
                     </thead>
-                    
+
                     <tbody>
 
                     </tbody>    
@@ -78,7 +78,38 @@
         </div>
             
 
+        <div class="container px-0">
+            <div class="card mb-3">
+                <h5 class="card-header rounded-0 text-whte bg-primary">Add New Train Information</h5>
+                <div class="card-body">
+                    <form>
+                        <div class="form group">
+                        <label for="trainname-input" class="font-weight-bold">Train Name</label>  
+                        <input type="text" class="form-control" id="trainname-input" arai-describedby="emailHelp">   
+                        </div>
 
+                        <div class="form group">
+                        <label for="destination-input" class="form-control" id="destination-input"></label>
+                        <input tupe="text" class="from-control" id="desination-input">    
+
+                        </div>
+
+                    </div>
+					<div class="form-group">
+					<label for="firsttime-input" class= "font-weight-bold">First Train Time (HH:mm - military time)</label>
+					<input data-format=" hh:mm" type="text" class="form-control" id="firsttime-input">
+					</div>
+					<div class="form-group">
+					<label for="frequency-input" class= "font-weight-bold">Frequency (min)</label>
+					<input type="number" class="form-control" id="frequency-input">
+					</div>
+					<button type="submit" class="btn btn-primary rounded-0 " id="add-train">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+                    
 
     <!-- JavaScript -->
     <script src="timesheetLogic.js"></script>
