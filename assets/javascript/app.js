@@ -61,3 +61,26 @@ $("#add-train").on("click", function () {
 
 });
 
+/ Firebase watcher + initial loader 
+database.ref().on("child_added", function(childSnapshot, prevChildKey) {  
+  var train = childSnapshot.val().formtrain;
+  var destination = childSnapshot.val().formdestination;
+  var frequency = childSnapshot.val().formfrequency;
+  var firstTime = childSnapshot.val().formfirsttime;
+
+  // First Time (pushed back 1 year to make sure it comes before current time)
+  var firstTimeConverted = moment(firstTime, "hh:mm").subtract(1, "years");
+  console.log(firstTimeConverted);
+
+
+   //determine Current Time
+   var currentTime = moment();
+   console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm a"));
+ 
+   //get timer functioning
+   $("#timer").text(currentTime.format("hh:mm a"));
+ 
+   // Difference between the times
+   var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+   console.log("DIFFERENCE IN TIME: " + diffTime);
+ 
