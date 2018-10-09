@@ -80,7 +80,7 @@ $(document).ready(function() {
 
         //post current time to jumbotron for reference
 
-        $("#currentTime").html("Current Time: " + moment(currentTime).format("hh:mm"));
+        $("#currentTime").text("Current Time: " + moment(currentTime).format("hh:mm"));
 
         //find the difference between the first train time and the current time
 
